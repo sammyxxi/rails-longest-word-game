@@ -1,0 +1,15 @@
+<h1>Score</h1>
+
+<% if @found && @included %>
+    <p>Congratulations!</p>
+    <p><%=  @word.capitalize %> is a valid English word.</p>
+    <p>Your score is <%= @word.length %></p>
+ <%  elsif !@included%>
+    <p>Sorry!</p>
+    <p><%= @word.capitalize %> cannot be built.</p>
+ <% else %>
+    <p>Sorry!</p>
+    <p><%= @word.capitalize %> is not a valid English word.</p>
+  <%  end %>
+
+<%= link_to "Play again!", new_path %>
